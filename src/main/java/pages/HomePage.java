@@ -20,8 +20,16 @@ public class HomePage {
         clickLink("JavaScript Alerts");
         return new AlertsPage(driver);
     }
+
+    public FileUploadPage clickFileUpload(){
+        clickLink("File Upload");
+        return new FileUploadPage(driver);
+    }
     
     private void clickLink(String linkText) {
         driver.findElement(By.linkText(linkText));
+    }
+
+    public void clickContextMenu() {
     }
 }
