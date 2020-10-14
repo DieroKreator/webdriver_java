@@ -25,11 +25,23 @@ public class HomePage {
         clickLink("File Upload");
         return new FileUploadPage(driver);
     }
+
+    public WysiwygEditorPage clickWysiwygEditor(){
+        clickLink("WYSIWYG Editor");
+        return new WysiwygEditorPage(driver);
+    }
     
     private void clickLink(String linkText) {
         driver.findElement(By.linkText(linkText));
     }
 
-    public void clickContextMenu() {
+    public ContextMenuPage clickContextMenu() {
+        clickLink("Context Menu");
+        return new ContextMenuPage(driver);
+    }
+
+    public FramesPage clickFramesPage(){
+        clickLink("Frames");
+        return new FramesPage(driver);
     }
 }
