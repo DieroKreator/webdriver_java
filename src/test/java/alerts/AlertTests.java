@@ -7,7 +7,7 @@ import static org.testng.Assert.assertEquals;
 
 public class AlertTests extends BaseTests {
 
-    @Test
+    @Test(priority = 1)
     public void testAcceptAlert() {
         var alertsPage = homePage.clickJavaScriptAlerts();
         alertsPage.triggerAlert();
@@ -15,7 +15,7 @@ public class AlertTests extends BaseTests {
         assertEquals(alertsPage.getResult(), "You successfuly clicked an alert", "Result text incorrect");
     }
 
-    @Test
+    @Test(priority = 2)
     public void testGetTextFromAlert(){
         var alertsPage = homePage.clickJavaScriptAlerts();
         alertsPage.triggerConfirm();
@@ -24,7 +24,7 @@ public class AlertTests extends BaseTests {
         assertEquals(text, "I am a JS Confirm", "Alert text incorrect");
     }
 
-    @Test
+    @Test(priority = 3)
     public void testSetInputInAlert(){
         var alertsPage = homePage.clickJavaScriptAlerts();
         alertsPage.triggerPrompt();

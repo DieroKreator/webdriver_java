@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [All Test Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="/Users/DieroKreator/code/TAU/JavaIntellideaProjects/automation/webdriver_java(failed)">
+    <classes>
+      <class name="frames.FrameTests">
+        <methods>
+          <include name="testFrameText"/>
+          <include name="goHome"/>
+          <include name="testWysiwyg"/>
+        </methods>
+      </class> <!-- frames.FrameTests -->
+      <class name="alerts.FileUploadTests">
+        <methods>
+          <include name="testFileUpload"/>
+          <include name="goHome"/>
+        </methods>
+      </class> <!-- alerts.FileUploadTests -->
+      <class name="alerts.AlertTests">
+        <methods>
+          <include name="testAcceptAlert"/>
+          <include name="testGetTextFromAlert"/>
+          <include name="goHome"/>
+          <include name="testSetInputInAlert"/>
+        </methods>
+      </class> <!-- alerts.AlertTests -->
+      <class name="alerts.ContextMenuTests">
+        <methods>
+          <include name="goHome"/>
+          <include name="testRightClick"/>
+        </methods>
+      </class> <!-- alerts.ContextMenuTests -->
+    </classes>
+  </test> <!-- /Users/DieroKreator/code/TAU/JavaIntellideaProjects/automation/webdriver_java(failed) -->
+</suite> <!-- Failed suite [All Test Suite] -->
