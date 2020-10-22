@@ -3,6 +3,7 @@ package base;
 import com.google.common.io.Files;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +14,8 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pages.HomePage;
+import utils.CookieManager;
+import utils.EventReporter;
 import utils.WindowManager;
 
 import java.io.File;
@@ -28,8 +31,10 @@ public class BaseTests {
     public void setUp(){
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
         driver = new EventFiringWebDriver(new ChromeDriver(getChromeOptions()));
+        driver.register(new EventReporter());
 //        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS); //be careful of doing this cause it is at project level
         goHome();
+        setCookie();
 
         homePage = new HomePage(driver);
 
@@ -76,16 +81,25 @@ public class BaseTests {
         }
     }
 
-    private ChromeOptions getChromeOptions(){
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("disable-infobars");
-        //options.setHeadless(true);
-        return options;
-    }
-
     public WindowManager getWindowManager(){
         return new WindowManager(driver);
     }
 
+    private ChromeOptions getChromeOptions(){
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("disable-infobars");
+//        options.setHeadless(true);
+        return options;
+    }
 
+    private void setCookie(){
+        Cookie cookie = new Cookie.Builder("tau", "123")
+                .domain("the-internet.herokuapp.com")
+                .build();
+        driver.manage().addCookie(cookie);
+    }
+
+    public CookieManager getCookieManager(){
+        return new CookieManager(driver);
+    }
 }
