@@ -16,10 +16,10 @@ public class HomePage {
         return new DropdownPage(driver);
     }
 
-//    public KeyPressesPage clickKeyPresses(){
-//        clickLink("Key Presses");
-//        return new KeyPressesPage(driver);
-//    }
+    public KeyPressesPage clickKeyPresses(){
+        clickLink("Key Presses");
+        return new KeyPressesPage(driver);
+    }
     
     public AlertsPage clickJavaScriptAlerts() {
         clickLink("JavaScript Alerts");
