@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.BeforeMethod;
 import pages.HomePage;
+import utils.WindowManager;
 
 import java.util.concurrent.TimeUnit;
 
@@ -60,4 +61,10 @@ public class BaseTests {
         //options.setHeadless(true);
         return options;
     }
+
+    public WindowManager getWindowManager(){
+        return new WindowManager(driver);
+    }
+
+
 }

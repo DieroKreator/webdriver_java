@@ -11,6 +11,11 @@ public class HomePage {
         this.driver = driver;
     }
 
+    public DropdownPage clickDropDown(){
+        clickLink("Dropdown");
+        return new DropdownPage(driver);
+    }
+
 //    public KeyPressesPage clickKeyPresses(){
 //        clickLink("Key Presses");
 //        return new KeyPressesPage(driver);
@@ -31,9 +36,24 @@ public class HomePage {
         return new WysiwygEditorPage(driver);
     }
 
+    public LargeAndDeepDomPage clickLargeAndDeepDom(){
+        clickLink("Large & Deep DOM");
+        return new LargeAndDeepDomPage(driver);
+    }
+
+    public InfiniteScrollPage clickInfiniteScroll(){
+        clickLink("Infinite Scroll");
+        return new InfiniteScrollPage(driver);
+    }
+
     public DynamicLoadingPage clickDynamicLoading(){
         clickLink("Dynamic Loading");
         return new DynamicLoadingPage(driver);
+    }
+
+    public MultipleWindowsPage clickMultipleWindows(){
+        clickLink("Multiple Windows");
+        return new MultipleWindowsPage(driver);
     }
 
     private void clickLink(String linkText) {
